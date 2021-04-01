@@ -37,6 +37,7 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentViewHolder> {
         String email = Contacts.emails[position];
 
         holder.bind(office, address, phone, email);
+        holder.getContext(context);
     }
 
     @Override

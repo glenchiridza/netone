@@ -39,14 +39,13 @@ class ContentViewHolder  extends RecyclerView.ViewHolder implements View.OnClick
 
     }
 
-//    public void getContext(Context context){
-//        //get context
-//        this.context = context;
-//    }
+    public void getContext(Context context){
+        //get context
+        this.context = context;
+    }
 
     @Override
     public void onClick(View view) {
-context = new Activity().getApplicationContext();
         Intent intent = new Intent( context, ContentViewActivity.class);
     }
 }
