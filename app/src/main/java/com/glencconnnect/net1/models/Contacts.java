@@ -39,27 +39,27 @@ public class Contacts {
 
     public static String[] addresses = {
 
-            "Ascent Link Communications, 1672 Gokwe Centre",
-            "344 Herbert Chitepo, (Between 9th and Enterprise road), Harare",
-            "Corner Rober Mugabe and 7th street, Gweru",
-            "Cnr J.Nyerere // Nelson Mandela, Fidelity House, Ground Floor, Harare",
-            "17 Grorge Square, Kamfinsa Shopping Center, Harare",
-            "1 Jason Moyo Avenue, Kopje Plaza Building, Harare",
-            "Shop 4 CAIPF Building, Robert Mugabe Road, Kwekwe",
-            "Shop 79/80(A1/18), Cnr Samora/Mutley Bend, Belvedere, Harare",
-            "985 J ababvu Street, Machipisa, Harare",
-            "2 Cnr Ruzawi/Pine Street, Marondera",
-            "ZESA Building , Robert Mugabe Way",
-            "Mabhena Enterprises Stand 81, Mataga, Mberengwa",
-            "93-94 Herbert Chitepo, Fidelity Life Tower",
-            "Stand 2 Ramjis Complex, Bulawayo",
-            "Robert Mugabe International Airport, International Arrivals, Harare",
-            "Stand 13, Cnr R.Mugabe and H.Chitepo, Rusape",
-            "Cnr 4th/ J.Moyo, Vangaurd House, Harare",
-            "19 Galleris Building, Victoria Falls",
-            "No. 56, WestGate Shopping Mall, Harare",
-            "Netone, Pavillion Kudu Cresent, ZITF Grounds, Bulawayo",
-            "998 Ireland Road, Zvishavane"
+            " Ascent Link Communications,\n1672 Gokwe Centre",
+            " 344 Herbert Chitepo,\n(Between 9th and Enterprise road),\nHarare",
+            " Corner Robert Mugabe and 7th street,\nGweru",
+            " Cnr J.Nyerere // Nelson Mandela, Fidelity House, Ground Floor, Harare",
+            " 17 Grorge Square,\nKamfinsa Shopping Center,\nHarare",
+            " 1 Jason Moyo Avenue,\nKopje Plaza Building,\nHarare",
+            " Shop 4 CAIPF Building,\nRobert Mugabe Road,\nKwekwe",
+            " Shop 79/80(A1/18),\nCnr Samora/Mutley Bend,\nBelvedere, Harare",
+            " 985 J ababvu Street,\nMachipisa,\nHarare",
+            " 2 Cnr Ruzawi/Pine Street,\nMarondera",
+            " ZESA Building ,\nRobert Mugabe Way",
+            " Mabhena Enterprises Stand 81,\nMataga,\nMberengwa",
+            " 93-94 Herbert Chitepo,\nFidelity Life Tower",
+            " Stand 2 Ramjis Complex,\nBulawayo",
+            " Robert Mugabe International Airport, \nInternational Arrivals,\nHarare",
+            " Stand 13, Cnr R.Mugabe and H.Chitepo,\nRusape",
+            " Cnr 4th/ J.Moyo,\nVangaurd House,\nHarare",
+            " 19 Galleris Building,\nVictoria Falls",
+            " No. 56, WestGate Shopping Mall,\nHarare",
+            " Netone,\nPavillion Kudu Cresent,\nZITF Grounds, Bulawayo",
+            " 998 Ireland Road,\nZvishavane"
     };
 
     public static String[] phone_num = {
