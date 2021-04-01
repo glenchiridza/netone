@@ -34,7 +34,8 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentViewHolder> {
         String office = Contacts.offices[position];
         String address = Contacts.addresses[position];
         String phone  = Contacts.phone_num[position];
-        String email = Contacts.emails[position];
+        //we have single email, so return that one for all
+        String email = Contacts.emails[0];
 
         holder.bind(office, address, phone, email);
         holder.getContext(context);

@@ -17,10 +17,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.glencconnnect.net1.ContentViewActivity;
 import com.glencconnnect.net1.R;
+import com.glencconnnect.net1.fragments.ContactsFragment;
 
 class ContentViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener {
     private TextView addressTitle;
     private Context context;
+
+    //retrieve data hold
+    private String office;
+    private String address;
+    private String phone;
+    private String email;
+
+    private String[] dataArr;
 
     public ContentViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -35,6 +44,18 @@ class ContentViewHolder  extends RecyclerView.ViewHolder implements View.OnClick
     }
 
     public void bind(String office, String address,String phone, String email){
+
+        //send to ContentViewActivity
+        this.office = office;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+
+        //send array with data to ContentViewActivity
+        dataArr = new String[]{office,address,phone,email};
+
+
+        //set Recycler Title
         addressTitle.setText(office);
 
     }
@@ -47,6 +68,8 @@ class ContentViewHolder  extends RecyclerView.ViewHolder implements View.OnClick
     @Override
     public void onClick(View view) {
         Intent intent = new Intent( context, ContentViewActivity.class);
+        intent.putExtra(ContactsFragment.DATA,dataArr);
+        context.startActivity(intent);
     }
 }
 

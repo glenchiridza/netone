@@ -17,6 +17,7 @@ import com.glencconnnect.net1.adapter.ContentAdapter;
 public class ContactsFragment extends Fragment {
 
 
+    public static final String DATA = "com.glencconnect.data";
     private RecyclerView recyclerView;
 
     public ContactsFragment() {
