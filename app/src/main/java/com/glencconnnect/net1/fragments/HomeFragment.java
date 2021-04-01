@@ -10,11 +10,11 @@ import androidx.fragment.app.Fragment;
 import com.glencconnnect.net1.R;
 
 
-public class Home extends Fragment {
+public class HomeFragment extends Fragment {
 
 
 
-    public Home() {
+    public HomeFragment() {
     }
 
 
