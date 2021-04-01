@@ -8,4 +8,14 @@
     <string name="more">More</string>
     <string name="dashboard">Dashboard</string>
     <string name="shop_details">Shop Details</string>
+    <string name="head_office">Head Office</string>
+    <string name="more_options">More Options</string>
+    <string name="pay_options">ZIMRA, Edgards/Jet, ZIMWA</string>
+    <string name="onemoney_payments">OneMoney Payments</string>
+    <string name="out_of_bundle_browsing">Out of Bundle Browsing</string>
+    <string name="obb">OBB</string>
+    <string name="about">About</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="share_app">Share App</string>
 </resources>
