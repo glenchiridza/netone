@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.glencconnnect.net1.MainActivity;
 import com.glencconnnect.net1.R;
 
 
@@ -21,7 +22,14 @@ public class ContactsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+        MainActivity mainActivity = (MainActivity) getActivity();
+        assert mainActivity != null;
+        mainActivity.setFragmentTitle("Contacts");
+
         // Inflating the layout
         return inflater.inflate(R.layout.fragment_contacts, container, false);
     }
+
 }

@@ -1,16 +1,16 @@
 package com.glencconnnect.net1;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.glencconnnect.net1.fragments.ContactsFragment;
 import com.glencconnnect.net1.fragments.HomeFragment;
@@ -21,25 +21,40 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNav;
+    private Toolbar toolbar;
+    private TextView titleText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        //toolbar title text
+        titleText = findViewById(R.id.title_text);
 
 
+        //bottom navigation setup
         bottomNav = findViewById(R.id.bottom_nav);
 
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                //call and return bottom navigation value
                return bottomNavItemSelected(item);
             }
         });
 
     }
 
+    //set Title for each fragment
+    public void setFragmentTitle(String title){
+        titleText.setText(title);
+    }
+
+    //choose navigation option and return result as boolean to navigationlistener
     private boolean bottomNavItemSelected(MenuItem item) {
        int id = item.getItemId();
             if(id == R.id.nav_home){
@@ -81,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 //        fragment = new Fragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(fragment);
+        fragmentTransaction.replace(R.id.main_holder_fragment,fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.glencconnnect.net1.MainActivity;
 import com.glencconnnect.net1.R;
 
 public class OneMoneFragment extends Fragment {
@@ -19,7 +20,13 @@ public class OneMoneFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout
+
+
+        MainActivity mainActivity = (MainActivity) getActivity();
+        assert mainActivity != null;
+        mainActivity.setFragmentTitle("Our Shops");
+
+        //return Inflated the layout
         return inflater.inflate(R.layout.fragment_one_mone, container, false);
     }
 }
