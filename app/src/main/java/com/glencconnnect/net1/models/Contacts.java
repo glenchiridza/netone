@@ -63,7 +63,7 @@ public class Contacts {
     };
 
     public static String[] phone_num = {
-            " ",
+            "+263 712980795, +263 712980898, +263 712980880",
             " ",
             "054 223500/501 ",
             " 0242 772039",
@@ -88,27 +88,7 @@ public class Contacts {
     };
 
     public static String[] emails = {
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " ",
-            " "
+            "customercare@netone.co.zw ",
 
     };
 
