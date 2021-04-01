@@ -5,11 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".fragments.OneMoneFragment">
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/money_recycler"
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_contact"/>
+        android:text="yes there is money here" />
 
 </FrameLayout>

@@ -6,7 +6,7 @@ package com.glencconnnect.net1.models;
 
 public class Contacts {
 
-    private static String[] offices = {
+    public static String[] offices = {
 
             "Head Office",
             "Beitbridge Shop",
