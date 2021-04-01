@@ -13,6 +13,9 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
+        <item name="android:textViewStyle">@style/Widget.AppCompat.TextView</item>
+
+        <item name="android:textColor">@color/black</item>
 
     </style>
 
@@ -21,6 +24,11 @@
         <item name="itemTextColor">@color/bottomnav_colors</item>
         <item name="itemIconTint">@color/bottomnav_colors</item>
     </style>
+
+    <style name="TextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 
     <color name="bottom_nav_item_color">#555555</color>
 </resources>
