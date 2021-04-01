@@ -11,6 +11,13 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!-- Customize your theme here. --> <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
+
+    </style>
+
+    <style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="android:background">@color/white</item>
+        <item name="itemTextColor">@color/bottomnav_colors</item>
+        <item name="itemIconTint">@color/bottomnav_colors</item>
     </style>
 </resources>

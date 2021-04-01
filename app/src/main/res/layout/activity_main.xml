@@ -18,9 +18,8 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/white"
-        app:itemTextColor="#FF5722"
         app:menu="@menu/nav_menu"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
