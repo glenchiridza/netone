@@ -16,6 +16,7 @@ import com.glencconnnect.net1.fragments.ContactsFragment;
 import com.glencconnnect.net1.fragments.HomeFragment;
 import com.glencconnnect.net1.fragments.MoreFragment;
 import com.glencconnnect.net1.fragments.OneMoneFragment;
+import com.glencconnnect.net1.models.Home;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNav;
     private Toolbar toolbar;
     private TextView titleText;
+
+    public static final String HOMESTART_FRAGMENT_TAG = "com.glencconnect.com.home_fragment";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,19 @@ public class MainActivity extends AppCompatActivity {
                return bottomNavItemSelected(item);
             }
         });
+
+        HomeFragment savedHomeFragment = (HomeFragment) getSupportFragmentManager().findFragmentByTag(HOMESTART_FRAGMENT_TAG);
+
+        //create new fragment if there is no existing one
+        if(savedHomeFragment == null) {
+            //load home fragment on activity create
+            HomeFragment homeFragment = new HomeFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.main_holder_fragment, homeFragment, HOMESTART_FRAGMENT_TAG);
+//            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
 
     }
 
@@ -97,9 +113,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.main_holder_fragment,fragment);
-        fragmentTransaction.addToBackStack(null);
+//        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
-
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
+    }
 }

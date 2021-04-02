@@ -29,7 +29,6 @@
     <string name="airtime_credit">Airtime Credit</string>
     <string name="katsaona">KaTsaona</string>
     <string name="one_cover">One Cover</string>
-    <string name="services">Services</string>
     <string name="call_center">Call Center</string>
     <string name="send_money">Send Money</string>
     <string name="zipit">ZIPIT</string>
@@ -42,4 +41,6 @@
     <string name="banking">Banking</string>
     <string name="language">Language</string>
     <string name="services">Services</string>
+    <string name="netone_mobile_app">NetOne Mobile App</string>
+    <string name="all_in_one">All in One</string>
 </resources>
