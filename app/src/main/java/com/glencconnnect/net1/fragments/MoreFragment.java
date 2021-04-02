@@ -32,7 +32,7 @@ public class MoreFragment extends Fragment {
     private CardView shareApp;
     private MainActivity mainActivity;
     private String[] phonePermission;
-    private String dial;
+    private String dial_pay;
 
     public MoreFragment() {
     }
@@ -57,13 +57,15 @@ public class MoreFragment extends Fragment {
         mainActivity.setFragmentTitle("More Options");
 
         //load dial codes
-        dial = DialCodes.dialcodes[0];
 
         payments.setOnClickListener(view1 -> {
+            dial_pay = DialCodes.more_dialcodes[0];
             dialIntent();
         });
         obb.setOnClickListener(view1 -> {
 
+            dial_pay = DialCodes.more_dialcodes[1];
+            dialIntent();
         });
         about.setOnClickListener(view1 -> {
 
@@ -87,7 +89,7 @@ public class MoreFragment extends Fragment {
     //handle calls intent
     private void dialIntent(){
         Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.fromParts("tel",dial,null));
+        intent.setData(Uri.fromParts("tel",dial_pay,null));
 //</ setup form >
 //< check: phone permission >
         if (permissionGranted()) {

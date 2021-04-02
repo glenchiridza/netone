@@ -32,7 +32,7 @@
         android:layout_marginStart="3dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/back_card_brown"
-        android:text="@string/airtime_topup"
+        android:text="@string/airtime_voucher"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textStyle="bold"
