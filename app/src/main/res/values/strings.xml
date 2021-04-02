@@ -18,4 +18,17 @@
     <string name="terms_and_conditions">Terms and Conditions</string>
     <string name="disclaimer">Disclaimer</string>
     <string name="share_app">Share App</string>
+    <string name="airtime_topup">Airtime Topup</string>
+    <string name="buy_zesa">Buy Zesa</string>
+    <string name="pay_merchant">Pay Merchant</string>
+    <string name="check_balance">Check Balance</string>
+    <string name="data_bundles">Data Bundles</string>
+    <string name="one_fusion">One Fusion</string>
+    <string name="one_fi">One-Fi</string>
+    <string name="call_me_back">Call Me Back</string>
+    <string name="airtime_credit">Airtime Credit</string>
+    <string name="katsaona">KaTsaona</string>
+    <string name="one_cover">One Cover</string>
+    <string name="services">Services</string>
+    <string name="call_center">Call Center</string>
 </resources>

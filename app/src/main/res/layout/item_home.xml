@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/check_balance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="3dp"
+        android:background="@drawable/back_card"
+        android:text="@string/check_balance"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:drawableTint="@color/white"
+        app:drawableTopCompat="@drawable/ic_account_balance"
+        app:layout_constraintEnd_toStartOf="@+id/airtime_top_up"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/airtime_top_up"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/back_card_brown"
+        android:text="@string/airtime_topup"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:drawableTint="@color/white"
+        app:drawableTopCompat="@drawable/ic_money"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/check_balance"
+        app:layout_constraintTop_toTopOf="@+id/check_balance" />
+
+    <TextView
+        android:id="@+id/buy_zesa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="3dp"
+        android:background="@drawable/back_card_brown"
+        android:text="@string/buy_zesa"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:drawableTint="@color/white"
+        app:drawableTopCompat="@drawable/ic_zesa_power"
+        app:layout_constraintEnd_toStartOf="@+id/pay_merchant"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@+id/check_balance"
+        app:layout_constraintTop_toBottomOf="@+id/airtime_top_up" />
+
+    <TextView
+        android:id="@+id/pay_merchant"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:background="@drawable/back_card"
+        android:text="@string/pay_merchant"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:drawableTopCompat="@drawable/ic_payment"
+        app:layout_constraintEnd_toEndOf="@+id/airtime_top_up"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buy_zesa"
+        app:layout_constraintTop_toTopOf="@+id/buy_zesa" />
+
+    <TextView
+        android:id="@+id/bundles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/card_border_color"
+        android:text="@string/data_bundles"
+        android:textAlignment="center"
+        app:drawableTopCompat="@drawable/ic_bundles"
+        app:layout_constraintEnd_toStartOf="@+id/one_fusion"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@+id/buy_zesa"
+        app:layout_constraintTop_toBottomOf="@+id/pay_merchant" />
+
+    <TextView
+        android:id="@+id/one_fusion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/card_border_color"
+        android:text="@string/one_fusion"
+        android:textAlignment="center"
+        app:drawableTopCompat="@drawable/ic_one_fusion"
+        app:layout_constraintEnd_toStartOf="@+id/one_fi"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bundles"
+        app:layout_constraintTop_toTopOf="@+id/bundles" />
+
+    <TextView
+        android:id="@+id/one_fi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_border_color"
+        android:text="@string/one_fi"
+        android:textAlignment="center"
+        app:drawableTopCompat="@drawable/ic_wifi"
+        app:layout_constraintEnd_toEndOf="@+id/pay_merchant"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/one_fusion"
+        app:layout_constraintTop_toTopOf="@+id/one_fusion" />
+
+    <TextView
+        android:id="@+id/call_back"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/card_border_color"
+        android:text="@string/call_me_back"
+        android:textAlignment="center"
+        app:drawableTopCompat="@drawable/ic_call_back"
+        app:layout_constraintEnd_toStartOf="@+id/airtime_cred"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/bundles"
+        app:layout_constraintTop_toBottomOf="@+id/one_fusion" />
+
+    <TextView
+        android:id="@+id/airtime_cred"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/card_border_color"
+        android:text="@string/airtime_credit"
+        android:textAlignment="center"
+        app:drawableTopCompat="@drawable/ic_airtime_credit"
+        app:layout_constraintEnd_toStartOf="@+id/katsaona"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/call_back"
+        app:layout_constraintTop_toTopOf="@+id/call_back" />
+
+    <TextView
+        android:id="@+id/katsaona"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_border_color"
+        android:text="@string/katsaona"
+        android:textAlignment="center"
+        app:drawableTopCompat="@drawable/ic_katsaona"
+        app:layout_constraintEnd_toEndOf="@+id/one_fi"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/airtime_cred"
+        app:layout_constraintTop_toTopOf="@+id/airtime_cred" />
+
+    <TextView
+        android:id="@+id/one_cover"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/card_border_color"
+        android:text="@string/one_cover"
+        android:textAlignment="center"
+        app:drawableTopCompat="@drawable/ic_cover"
+        app:layout_constraintEnd_toStartOf="@+id/services"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/call_back"
+        app:layout_constraintTop_toBottomOf="@+id/airtime_cred" />
+
+    <TextView
+        android:id="@+id/services"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/card_border_color"
+        android:text="@string/services"
+        android:textAlignment="center"
+        app:drawableTopCompat="@drawable/ic_services"
+        app:layout_constraintEnd_toStartOf="@+id/call_center"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/one_cover"
+        app:layout_constraintTop_toTopOf="@+id/one_cover" />
+
+    <TextView
+        android:id="@+id/call_center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_border_color"
+        android:text="@string/call_center"
+        android:textAlignment="center"
+        app:drawableTopCompat="@drawable/ic_call_center"
+        app:layout_constraintEnd_toEndOf="@+id/katsaona"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/services"
+        app:layout_constraintTop_toTopOf="@+id/services" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
