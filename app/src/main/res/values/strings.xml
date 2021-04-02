@@ -31,4 +31,15 @@
     <string name="one_cover">One Cover</string>
     <string name="services">Services</string>
     <string name="call_center">Call Center</string>
+    <string name="send_money">Send Money</string>
+    <string name="zipit">ZIPIT</string>
+    <string name="social_media">Social Media</string>
+    <string name="sms_bundle">SMS Bundle</string>
+    <string name="others">Others</string>
+    <string name="school_fees">School Fees</string>
+    <string name="cash_out">Cash Out</string>
+    <string name="pay_bill">Pay Bill</string>
+    <string name="banking">Banking</string>
+    <string name="language">Language</string>
+    <string name="services">Services</string>
 </resources>

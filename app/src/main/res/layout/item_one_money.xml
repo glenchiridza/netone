@@ -47,7 +47,7 @@
         android:id="@+id/buy_zesa"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="3dp"
         android:background="@drawable/back_card_brown"
         android:text="@string/buy_zesa"
@@ -92,7 +92,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@+id/buy_zesa"
-        app:layout_constraintTop_toBottomOf="@+id/pay_merchant" />
+        app:layout_constraintTop_toBottomOf="@+id/zipit" />
 
     <TextView
         android:id="@+id/one_fusion"
@@ -128,9 +128,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="5dp"
         android:background="@drawable/card_border_color"
-        android:text="@string/call_me_back"
+        android:text="@string/school_fees"
         android:textAlignment="center"
-        app:drawableTopCompat="@drawable/ic_call_back"
+        app:drawableTopCompat="@drawable/ic_school_fees"
         app:layout_constraintEnd_toStartOf="@+id/cash_out"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/bundles"
@@ -142,9 +142,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
         android:background="@drawable/card_border_color"
-        android:text="@string/airtime_credit"
+        android:text="@string/cash_out"
         android:textAlignment="center"
-        app:drawableTopCompat="@drawable/ic_airtime_credit"
+        app:drawableTopCompat="@drawable/ic_cash_out"
         app:layout_constraintEnd_toStartOf="@+id/pay_bill"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/school_fees"
@@ -155,9 +155,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/card_border_color"
-        android:text="@string/katsaona"
+        android:text="@string/pay_bill"
         android:textAlignment="center"
-        app:drawableTopCompat="@drawable/ic_katsaona"
+        app:drawableTopCompat="@drawable/ic_pay_bill"
         app:layout_constraintEnd_toEndOf="@+id/one_fi"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/cash_out"
@@ -170,9 +170,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="5dp"
         android:background="@drawable/card_border_color"
-        android:text="@string/one_cover"
+        android:text="@string/banking"
         android:textAlignment="center"
-        app:drawableTopCompat="@drawable/ic_cover"
+        app:drawableTopCompat="@drawable/ic_banking"
         app:layout_constraintEnd_toStartOf="@+id/language"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/school_fees"
@@ -184,9 +184,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
         android:background="@drawable/card_border_color"
-        android:text="@string/services"
+        android:text="@string/language"
         android:textAlignment="center"
-        app:drawableTopCompat="@drawable/ic_services"
+        app:drawableTopCompat="@drawable/ic_language"
         app:layout_constraintEnd_toStartOf="@+id/services"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/banking"
@@ -197,13 +197,88 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/card_border_color"
-        android:text="@string/call_center"
+        android:text="@string/services"
         android:textAlignment="center"
-        app:drawableTopCompat="@drawable/ic_call_center"
+        app:drawableTopCompat="@drawable/ic_services"
         app:layout_constraintEnd_toEndOf="@+id/pay_bill"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/language"
         app:layout_constraintTop_toTopOf="@+id/language" />
+
+
+    <TextView
+        android:id="@+id/send_money"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="3dp"
+        android:background="@drawable/back_card_brown"
+        android:text="@string/send_money"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:drawableTopCompat="@drawable/ic_send_money"
+        app:layout_constraintEnd_toStartOf="@+id/zipit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/buy_zesa"
+        app:layout_constraintTop_toBottomOf="@+id/pay_merchant" />
+
+    <TextView
+        android:id="@+id/zipit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:background="@drawable/back_card"
+        android:text="@string/zipit"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:drawableTopCompat="@drawable/ic_zipit"
+        app:layout_constraintEnd_toEndOf="@+id/pay_merchant"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/send_money"
+        app:layout_constraintTop_toTopOf="@+id/send_money" />
+
+
+    <TextView
+        android:id="@+id/social_media"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/card_border_color"
+        android:text="@string/social_media"
+        android:textAlignment="center"
+        app:drawableTopCompat="@drawable/ic_facebook"
+        app:layout_constraintEnd_toStartOf="@+id/sms_bundle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/banking"
+        app:layout_constraintTop_toBottomOf="@+id/banking" />
+
+    <TextView
+        android:id="@+id/sms_bundle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="@string/sms_bundle"
+        android:textAlignment="center"
+        android:background="@drawable/card_border_color"
+        app:drawableTopCompat="@drawable/ic_sms"
+        app:layout_constraintEnd_toStartOf="@+id/others"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/social_media"
+        app:layout_constraintTop_toTopOf="@+id/social_media" />
+
+    <TextView
+        android:id="@+id/others"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/others"
+        android:textAlignment="center"
+        android:background="@drawable/card_border_color"
+        app:drawableTopCompat="@drawable/ic_others"
+        app:layout_constraintEnd_toEndOf="@+id/services"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sms_bundle"
+        app:layout_constraintTop_toTopOf="@+id/sms_bundle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
