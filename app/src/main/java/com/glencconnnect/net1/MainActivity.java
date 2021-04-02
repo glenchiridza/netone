@@ -16,7 +16,6 @@ import com.glencconnnect.net1.fragments.ContactsFragment;
 import com.glencconnnect.net1.fragments.HomeFragment;
 import com.glencconnnect.net1.fragments.MoreFragment;
 import com.glencconnnect.net1.fragments.OneMoneFragment;
-import com.glencconnnect.net1.models.Home;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
