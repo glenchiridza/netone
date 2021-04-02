@@ -146,8 +146,8 @@ public class MainActivity extends AppCompatActivity {
     private void dialIntent(){
         Intent intent = new Intent(Intent.ACTION_CALL);
         intent.setData(Uri.fromParts("tel",dial_code,null));
-//</ setup form >
-//< check: phone permission >
+
+//check: phone permission
         if (permissionGranted()) {
 // TODO: Consider calling
             requestPhonePermission();
@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
                     boolean phoneAccept = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                     boolean phone_read = grantResults[1] == PackageManager.PERMISSION_GRANTED;
                     if (phoneAccept && phone_read) {
-                        dialIntent();
+//                        dialIntent();
                     }
                 } else {
                     requestPhonePermission();

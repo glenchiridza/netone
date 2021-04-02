@@ -63,7 +63,6 @@ public class MoreFragment extends Fragment {
             dial_pay = DialCodes.more_dialcodes[0];
             //call universalDialer from mainactivity and pass in the code
             mainActivity.universalDial(dial_pay);
-            mainActivity.dialIntent();
         });
         obb.setOnClickListener(view1 -> {
 
@@ -74,7 +73,7 @@ public class MoreFragment extends Fragment {
             startActivity(new Intent(getActivity(), AboutActivity.class));
         });
         terms.setOnClickListener(view1 -> {
-            String url = "https://www.netone.co.zw/support";
+            String url = "https://www.netone.co.zw";
             Intent urlIntent = new Intent(Intent.ACTION_VIEW);
             urlIntent.setData(Uri.parse(url));
             startActivity(urlIntent);

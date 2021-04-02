@@ -19,14 +19,14 @@
         android:textStyle="bold"
         app:drawableTint="@color/white"
         app:drawableTopCompat="@drawable/ic_account_balance"
-        app:layout_constraintEnd_toStartOf="@+id/airtime_top_up"
+        app:layout_constraintEnd_toStartOf="@+id/airtime_voucher"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/airtime_top_up"
+        android:id="@+id/airtime_voucher"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -60,7 +60,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@+id/check_balance"
-        app:layout_constraintTop_toBottomOf="@+id/airtime_top_up" />
+        app:layout_constraintTop_toBottomOf="@+id/airtime_voucher" />
 
     <TextView
         android:id="@+id/pay_merchant"
@@ -73,7 +73,7 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         app:drawableTopCompat="@drawable/ic_payment"
-        app:layout_constraintEnd_toEndOf="@+id/airtime_top_up"
+        app:layout_constraintEnd_toEndOf="@+id/airtime_voucher"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buy_zesa"
         app:layout_constraintTop_toTopOf="@+id/buy_zesa" />
@@ -125,7 +125,7 @@
         app:layout_constraintTop_toTopOf="@+id/one_fusion" />
 
     <TextView
-        android:id="@+id/school_fees"
+        android:id="@+id/call_back"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -135,13 +135,13 @@
         android:textAlignment="center"
         android:minHeight="90dp"
         app:drawableTopCompat="@drawable/ic_call_back"
-        app:layout_constraintEnd_toStartOf="@+id/cash_out"
+        app:layout_constraintEnd_toStartOf="@+id/credit_airtime"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/bundles"
         app:layout_constraintTop_toBottomOf="@+id/one_fusion" />
 
     <TextView
-        android:id="@+id/cash_out"
+        android:id="@+id/credit_airtime"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
@@ -150,13 +150,13 @@
         android:textAlignment="center"
         android:minHeight="90dp"
         app:drawableTopCompat="@drawable/ic_airtime_credit"
-        app:layout_constraintEnd_toStartOf="@+id/pay_bill"
+        app:layout_constraintEnd_toStartOf="@+id/katsaona"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/school_fees"
-        app:layout_constraintTop_toTopOf="@+id/school_fees" />
+        app:layout_constraintStart_toEndOf="@+id/call_back"
+        app:layout_constraintTop_toTopOf="@+id/call_back" />
 
     <TextView
-        android:id="@+id/pay_bill"
+        android:id="@+id/katsaona"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/card_border_color"
@@ -166,11 +166,11 @@
         app:drawableTopCompat="@drawable/ic_katsaona"
         app:layout_constraintEnd_toEndOf="@+id/one_fi"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cash_out"
-        app:layout_constraintTop_toTopOf="@+id/cash_out" />
+        app:layout_constraintStart_toEndOf="@+id/credit_airtime"
+        app:layout_constraintTop_toTopOf="@+id/credit_airtime" />
 
     <TextView
-        android:id="@+id/banking"
+        android:id="@+id/one_cover"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -182,14 +182,14 @@
         android:minHeight="90dp"
         app:drawableTopCompat="@drawable/ic_cover"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/language"
+        app:layout_constraintEnd_toStartOf="@+id/service"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/school_fees"
-        app:layout_constraintTop_toBottomOf="@+id/cash_out"
+        app:layout_constraintStart_toStartOf="@+id/call_back"
+        app:layout_constraintTop_toBottomOf="@+id/credit_airtime"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/language"
+        android:id="@+id/service"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
@@ -198,13 +198,13 @@
         android:textAlignment="center"
         android:minHeight="90dp"
         app:drawableTopCompat="@drawable/ic_services"
-        app:layout_constraintEnd_toStartOf="@+id/services"
+        app:layout_constraintEnd_toStartOf="@+id/call_center"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/banking"
-        app:layout_constraintTop_toTopOf="@+id/banking" />
+        app:layout_constraintStart_toEndOf="@+id/one_cover"
+        app:layout_constraintTop_toTopOf="@+id/one_cover" />
 
     <TextView
-        android:id="@+id/services"
+        android:id="@+id/call_center"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/card_border_color"
@@ -212,10 +212,10 @@
         android:textAlignment="center"
         android:minHeight="90dp"
         app:drawableTopCompat="@drawable/ic_call_center"
-        app:layout_constraintEnd_toEndOf="@+id/pay_bill"
+        app:layout_constraintEnd_toEndOf="@+id/katsaona"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/language"
-        app:layout_constraintTop_toTopOf="@+id/language" />
+        app:layout_constraintStart_toEndOf="@+id/service"
+        app:layout_constraintTop_toTopOf="@+id/service" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
