@@ -17,7 +17,7 @@ public class HomeFragment extends Fragment {
 
 
     private TextView checkBal;
-    private TextView topup;
+    private TextView airtime_voucher;
     private TextView payMrchant;
     private TextView zesa;
     private TextView bundles;
@@ -69,7 +69,7 @@ public class HomeFragment extends Fragment {
             mainActivity.universalDial(dial_code);
         });
 
-        topup.setOnClickListener(view -> {
+        airtime_voucher.setOnClickListener(view -> {
             dial_code = DialCodes.one_money_dialcodes[1];
             mainActivity.universalDial(dial_code);
         });
@@ -137,7 +137,7 @@ public class HomeFragment extends Fragment {
 
     public void init(View view){
         checkBal = view.findViewById(R.id.check_balance);
-        topup = view.findViewById(R.id.airtime_top_up);
+        airtime_voucher = view.findViewById(R.id.airtime_voucher);
         payMrchant = view.findViewById(R.id.pay_merchant);
         zesa = view.findViewById(R.id.buy_zesa);
         bundles = view.findViewById(R.id.bundles);
