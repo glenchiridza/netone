@@ -45,4 +45,6 @@
     <string name="all_in_one">All in One</string>
     <string name="other_services">Other Services</string>
     <string name="airtime_voucher">Airtime Voucher</string>
+    <string name="version_number">v4.0.0</string>
+    <string name="developer_details">Developer : glen chiridza \n glenchiridz@gmail.com\n</string>
 </resources>

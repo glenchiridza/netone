@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.glencconnnect.net1.AboutActivity;
 import com.glencconnnect.net1.MainActivity;
 import com.glencconnnect.net1.R;
 import com.glencconnnect.net1.models.DialCodes;
@@ -60,18 +61,23 @@ public class MoreFragment extends Fragment {
 
         payments.setOnClickListener(view1 -> {
             dial_pay = DialCodes.more_dialcodes[0];
-            dialIntent();
+            //call universalDialer from mainactivity and pass in the code
+            mainActivity.universalDial(dial_pay);
+            mainActivity.dialIntent();
         });
         obb.setOnClickListener(view1 -> {
 
             dial_pay = DialCodes.more_dialcodes[1];
-            dialIntent();
+            mainActivity.universalDial(dial_pay);
         });
         about.setOnClickListener(view1 -> {
-
+            startActivity(new Intent(getActivity(), AboutActivity.class));
         });
         terms.setOnClickListener(view1 -> {
-
+            String url = "https://www.netone.co.zw/support";
+            Intent urlIntent = new Intent(Intent.ACTION_VIEW);
+            urlIntent.setData(Uri.parse(url));
+            startActivity(urlIntent);
         });
         shareApp.setOnClickListener(view1 -> {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -86,59 +92,6 @@ public class MoreFragment extends Fragment {
         return view;
     }
 
-    //handle calls intent
-    private void dialIntent(){
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.fromParts("tel",dial_pay,null));
-//</ setup form >
-//< check: phone permission >
-        if (permissionGranted()) {
-// TODO: Consider calling
-            requestPhonePermission();
-
-            startActivity(intent);
-            return;
-        }
-//check: phone permission
-
-//call the telephone number
-        startActivity(intent);
-    }
-
-
-
-    private void requestPhonePermission() {
-        ActivityCompat.requestPermissions(getActivity(),phonePermission,PHONECALL_REQUESTCODE);
-    }
-
-    private boolean permissionGranted() {
-        boolean result,result1;
-
-        result = ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.CALL_PHONE)== PackageManager.PERMISSION_GRANTED;
-        result1 = ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.READ_PHONE_STATE)== PackageManager.PERMISSION_GRANTED;
-
-        return result && result1;
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case PHONECALL_REQUESTCODE: {
-                if (grantResults.length > 0) {
-                    boolean phoneAccept = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                    boolean phone_read = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-                    if (phoneAccept && phone_read) {
-                        dialIntent();
-                    }
-                } else {
-                    requestPhonePermission();
-                }
-            }
-            break;
-            default:return;
-        }
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
 
 
     //initialize views

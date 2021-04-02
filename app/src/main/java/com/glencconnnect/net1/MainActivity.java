@@ -3,10 +3,16 @@ package com.glencconnnect.net1;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -20,11 +26,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int DIAL_REQUESTCODE = 13;
     private BottomNavigationView bottomNav;
     private Toolbar toolbar;
     private TextView titleText;
 
     public static final String HOMESTART_FRAGMENT_TAG = "com.glencconnect.com.home_fragment";
+    private String[] phonePermission;
+    private String dial_code;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
         //toolbar title text
         titleText = findViewById(R.id.title_text);
+
+        //permission
+        phonePermission = new String[]{Manifest.permission.CALL_PHONE,Manifest.permission.READ_PHONE_STATE};
 
 
         //bottom navigation setup
@@ -120,5 +132,67 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         finish();
         super.onBackPressed();
+    }
+
+
+    ///calling content
+
+    public void universalDial(String code){
+        dial_code = code;
+        dialIntent();
+    }
+
+    //handle calls intent
+    private void dialIntent(){
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.fromParts("tel",dial_code,null));
+//</ setup form >
+//< check: phone permission >
+        if (permissionGranted()) {
+// TODO: Consider calling
+            requestPhonePermission();
+
+            startActivity(intent);
+            return;
+        }
+//check: phone permission
+
+//call the telephone number
+        startActivity(intent);
+    }
+
+
+
+    private void requestPhonePermission() {
+        ActivityCompat.requestPermissions(this,phonePermission, DIAL_REQUESTCODE);
+    }
+
+    private boolean permissionGranted() {
+        boolean result,result1;
+
+        result = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)== PackageManager.PERMISSION_GRANTED;
+        result1 = ContextCompat.checkSelfPermission(this,Manifest.permission.READ_PHONE_STATE)== PackageManager.PERMISSION_GRANTED;
+
+        return result && result1;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case DIAL_REQUESTCODE: {
+                if (grantResults.length > 0) {
+                    boolean phoneAccept = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    boolean phone_read = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                    if (phoneAccept && phone_read) {
+                        dialIntent();
+                    }
+                } else {
+                    requestPhonePermission();
+                }
+            }
+            break;
+            default:return;
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }
