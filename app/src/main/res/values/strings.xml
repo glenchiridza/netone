@@ -47,4 +47,9 @@
     <string name="airtime_voucher">Airtime Voucher</string>
     <string name="version_number">v4.0.0</string>
     <string name="developer_details">Developer : glen chiridza \n glenchiridz@gmail.com\n</string>
+    <string name="your_short_codes">Your Short Codes</string>
+    <string name="save_code">Save Code</string>
+    <string name="short_code">Short Code</string>
+    <string name="shortcode_title">ShortCode Title</string>
+    <string name="starred">Starred</string>
 </resources>

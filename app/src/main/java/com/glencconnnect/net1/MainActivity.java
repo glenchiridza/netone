@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -126,6 +127,20 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.main_holder_fragment,fragment);
 //        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.appbar_options,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_star){
+            startActivity( new Intent(MainActivity.this, MyCodesActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

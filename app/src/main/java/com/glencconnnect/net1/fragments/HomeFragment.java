@@ -64,70 +64,70 @@ public class HomeFragment extends Fragment {
 
         checkBal.setOnClickListener(view -> {
 
-            dial_code = DialCodes.one_money_dialcodes[0];
+            dial_code = DialCodes.home_dialcodes[0];
             //call universalDialer from mainactivity and pass in the code
             mainActivity.universalDial(dial_code);
         });
 
         airtime_voucher.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[1];
+            dial_code = DialCodes.home_dialcodes[1];
             mainActivity.universalDial(dial_code);
         });
 
         zesa.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[2];
+            dial_code = DialCodes.home_dialcodes[2];
             mainActivity.universalDial(dial_code);
         });
 
         payMrchant.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[3];
+            dial_code = DialCodes.home_dialcodes[3];
             mainActivity.universalDial(dial_code);
         });
 
 
         bundles.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[4];
+            dial_code = DialCodes.home_dialcodes[4];
             mainActivity.universalDial(dial_code);
         });
 
         onefusion.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[5];
+            dial_code = DialCodes.home_dialcodes[5];
             mainActivity.universalDial(dial_code);
         });
 
         oneFi.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[6];
+            dial_code = DialCodes.home_dialcodes[6];
             mainActivity.universalDial(dial_code);
         });
 
         call_back.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[7];
+            dial_code = DialCodes.home_dialcodes[7];
             mainActivity.universalDial(dial_code);
         });
 
         credit_airtime.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[8];
+            dial_code = DialCodes.home_dialcodes[8];
             mainActivity.universalDial(dial_code);
         });
 
         katsaona.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[9];
+            dial_code = DialCodes.home_dialcodes[9];
             mainActivity.universalDial(dial_code);
         });
 
         onecover.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[10];
+            dial_code = DialCodes.home_dialcodes[10];
             mainActivity.universalDial(dial_code);
         });
 
 
         services.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[11];
+            dial_code = DialCodes.home_dialcodes[11];
             mainActivity.universalDial(dial_code);
         });
 
         call_center.setOnClickListener(view -> {
-            dial_code = DialCodes.one_money_dialcodes[12];
+            dial_code = DialCodes.home_dialcodes[12];
             mainActivity.universalDial(dial_code);
         });
 
