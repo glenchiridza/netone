@@ -34,7 +34,7 @@ public class ContactsFragment extends Fragment {
         //setting title
         MainActivity mainActivity = (MainActivity) getActivity();
         assert mainActivity != null;
-        mainActivity.setFragmentTitle("Contacts");
+        mainActivity.setFragmentTitle("Our Shops");
 
         //setting recyclerview
         recyclerView  = view.findViewById(R.id.contacts_recycler);

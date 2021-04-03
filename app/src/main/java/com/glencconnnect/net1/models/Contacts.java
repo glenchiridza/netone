@@ -32,13 +32,27 @@ public class Contacts {
             "Masvingo Shop",
             "Mataga Shop",
             "Mutare Shop",
-            "Ramjis Shop","Robert Mugabe International Airport", "Rusape Shop", "Vangaurd Shop", "Victoria Falls Shop","WestGate Shop","ZITF Shop",
+            "Ramjis Shop",
+            "Robert Mugabe International Airport",
+            "Rusape Shop", "Vangaurd Shop",
+            "Victoria Falls Shop","WestGate Shop",
+            "ZITF Shop",
             "Zvishavane Shop"
     };
 
 
     public static String[] addresses = {
 
+            "16th Floor Kopje building\n1 Jason Moyo Avenue\nHarare",
+            "Zesa Pension Fund Complex\nShop no 8 (Beside Baobab Spar\nBox 463\nBeitbridge",
+            "Shop 28 Ground Floor\nSam Levy Village\nBorrowdale\nHarare",
+            "Bulawayo Airport\nBulawayo",
+            "Cnr J.Moyo // L Takawira\nBulawayo",
+            "Stand 5 Magamba Way\nChinhoyi",
+            "Shop 9 Old Mutual Complex\nChiredzi",
+            "31595 Unit G\nChitungwiza",
+            "530 Cloete Street\nCabs Building\nChivhu",
+            "Shop 36A\nEastGate shopping Complex\nFirst Floor\nHarare",
             " Ascent Link Communications,\n1672 Gokwe Centre",
             " 344 Herbert Chitepo,\n(Between 9th and Enterprise road),\nHarare",
             " Corner Robert Mugabe and 7th street,\nGweru",
@@ -64,7 +78,17 @@ public class Contacts {
 
     public static String[] phone_num = {
             "+263 712980795, +263 712980898, +263 712980880",
-            " ",
+            "085 2323233/6 , 0712980652",
+            "0242 851030/1",
+            "",
+            "029 881818/9",
+            "067 28003",
+            "",
+            "0242 31727/30734",
+            "0712980908",
+            "0242 791122",
+            "",
+            "",
             "054 223500/501 ",
             " 0242 772039",
             "0242 443488/495255",

@@ -52,7 +52,7 @@ public class OneMoneFragment extends Fragment {
 
         mainActivity = (MainActivity) getActivity();
         assert mainActivity != null;
-        mainActivity.setFragmentTitle("Our Shops");
+        mainActivity.setFragmentTitle("One Money");
 
         //click listeners
         clickListeners();
