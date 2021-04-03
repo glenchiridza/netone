@@ -13,7 +13,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.glencconnnect.net1.adapter.MyCodeAdapter;
+import com.glencconnnect.net1.models.MyCodes;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -30,7 +34,7 @@ public class MyCodesActivity extends AppCompatActivity {
     private EditText editCodeTitle;
     private EditText editCode;
     private Button btnSave;
-    private List<String> savedCodes;
+    private List<MyCodes> savedCodes;
     private RecyclerView recyclerView;
     private MyCodeAdapter adapter;
 
@@ -48,7 +52,6 @@ public class MyCodesActivity extends AppCompatActivity {
 
         savedCodes = new ArrayList<>();
 
-        loadData();
 
         //edit texts
         editCodeTitle = findViewById(R.id.edit_shortcode_title);
@@ -61,9 +64,9 @@ public class MyCodesActivity extends AppCompatActivity {
 
         btnSave.setOnClickListener(view -> {
 
-            savedCodes.add(editCodeTitle.getText().toString());
+            savedCodes.add(new MyCodes(editCodeTitle.getText().toString(),editCode.getText().toString()));
             adapter.notifyItemInserted(savedCodes.size());
-//            saveData();
+            saveData();
         });
 
         //setup recyclerview
@@ -82,55 +85,59 @@ public class MyCodesActivity extends AppCompatActivity {
         // shared preferences.
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
 
-        // below line is to get to string present from our
-        // shared prefs if not present setting it as null.
+        // creating a variable for gson.
+        Gson gson = new Gson();
+
+        // get the type of our array list.
+        Type type = new TypeToken<ArrayList<MyCodes>>() {}.getType();
+
+
+        // get string present from sharedpref
         String json = sharedPreferences.getString(SHAREDCODE, null);
 
+        // getting data from gson
+        // and saving it to our array list
+        savedCodes = gson.fromJson(json, type);
 
-        savedCodes = Collections.singletonList(json);
+
+
         // checking below if the array list is empty or not
         if (savedCodes == null) {
-            // if the array list is empty
-            // creating a new array list.
+            // creating a new array list. if list is empty
             savedCodes = new ArrayList<>();
         }
     }
 
     private void saveData() {
-        // method for saving the data in array list.
-        // creating a variable for storing data in
-        // shared preferences.
+
+
+        // store data in shared preferences.
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
 
-        // creating a variable for editor to
-        // store data in shared preferences.
+        //editor to store data in shared preferences.
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        // creating a new variable for gson.
+        Gson gson = new Gson();
 
-        // below line is to save data in shared
-        // prefs in the form of string.
+        // getting data from gson and storing it in a string.
+        String json = gson.toJson(savedCodes);
+
+
+        //save to shared prefs in the form of string.
         editor.putString(SHAREDCODE, String.valueOf(savedCodes));
 
-        // below line is to apply changes
-        // and save data in shared prefs.
+        //apply changes
         editor.apply();
 
         // after saving data we are displaying a toast message.
-        Toast.makeText(this, "Saved Array List to Shared preferences. ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Short code saved ", Toast.LENGTH_SHORT).show();
     }
 
 
-    @Override
-    protected void onPause() {
-        loadData();
-        super.onPause();
-    }
 
-    @Override
-    protected void onResume() {
-        loadData();
-        super.onResume();
-    }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

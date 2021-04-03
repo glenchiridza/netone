@@ -18,6 +18,7 @@ import com.glencconnnect.net1.ContentViewActivity;
 import com.glencconnnect.net1.MainActivity;
 import com.glencconnnect.net1.R;
 import com.glencconnnect.net1.fragments.ContactsFragment;
+import com.glencconnnect.net1.models.MyCodes;
 
 class MyCodeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private TextView codeTitle;
@@ -40,11 +41,11 @@ class MyCodeViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
         return new MyCodeViewHolder(view);
     }
 
-    public void bind(String mycode){
+    public void bind(MyCodes mycode){
 
-        dial_code = mycode;
+        dial_code = mycode.getCodeNum();
 
-        codeTitle.setText(mycode);
+        codeTitle.setText(mycode.getCodeTitle());
 
     }
 
@@ -56,7 +57,7 @@ class MyCodeViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
     @Override
     public void onClick(View view) {
 
-        mainActivity.universalDial("1212");
+        mainActivity.universalDial(dial_code);
     }
 }
 

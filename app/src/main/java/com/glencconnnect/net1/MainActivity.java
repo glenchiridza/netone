@@ -163,17 +163,21 @@ public class MainActivity extends AppCompatActivity {
         intent.setData(Uri.fromParts("tel",dial_code,null));
 
 //check: phone permission
-        if (permissionGranted()) {
-// TODO: Consider calling
+        if (!permissionGranted()) {
+
+
             requestPhonePermission();
 
-            startActivity(intent);
-            return;
+        }
+        else {
+            //You already have permission
+            try {
+                startActivity(intent);
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            }
         }
 //check: phone permission
-
-//call the telephone number
-        startActivity(intent);
     }
 
 
@@ -199,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                     boolean phoneAccept = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                     boolean phone_read = grantResults[1] == PackageManager.PERMISSION_GRANTED;
                     if (phoneAccept && phone_read) {
-//                        dialIntent();
+                        dialIntent();
                     }
                 } else {
                     requestPhonePermission();
