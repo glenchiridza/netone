@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
             if(id == R.id.nav_home){
                 HomeFragment homeFragment = new HomeFragment();
                 setUpFragment(homeFragment);
-                Toast.makeText(this, "clicked home", Toast.LENGTH_SHORT).show();
                 return true;
 
             }
@@ -100,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
             else if(id == R.id.nav_one_money){
                 OneMoneFragment oneMoneFragment = new OneMoneFragment();
                 setUpFragment(oneMoneFragment);
-                Toast.makeText(this, "clicked money", Toast.LENGTH_SHORT).show();
                 return true;
             }
 
@@ -108,14 +106,12 @@ public class MainActivity extends AppCompatActivity {
 
                 ContactsFragment contactsFragment = new ContactsFragment();
                 setUpFragment(contactsFragment);
-                Toast.makeText(this, "clicked contact", Toast.LENGTH_SHORT).show();
 
                 return true;
             }
             else if(id == R.id.nav_more) {
                 MoreFragment moreFragment = new MoreFragment();
                 setUpFragment(moreFragment);
-                Toast.makeText(this, "clicked more", Toast.LENGTH_SHORT).show();
                 return true;
             }
             else
@@ -125,11 +121,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void setUpFragment(Fragment fragment){
-//        fragment = new Fragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.main_holder_fragment,fragment);
-//        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
