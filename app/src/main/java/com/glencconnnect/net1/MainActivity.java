@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+//setup each fragment
     public void setUpFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
