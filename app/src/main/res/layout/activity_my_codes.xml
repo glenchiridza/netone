@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/short_code"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="phone" />
 
 
     </com.google.android.material.textfield.TextInputLayout>

@@ -6,6 +6,7 @@ package com.glencconnnect.net1.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ class MyCodeViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
 
     //retrieve data hold
     private String dial_code;
-    private MainActivity mainActivity = new MainActivity();
+    private MainActivity mainActivity;
 
     public MyCodeViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -57,8 +58,13 @@ class MyCodeViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
     @Override
     public void onClick(View view) {
 
-        mainActivity.universalDial(dial_code);
+
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.fromParts("tel",dial_code,null));
+        context.startActivity(intent);
     }
+
+
 }
 
 

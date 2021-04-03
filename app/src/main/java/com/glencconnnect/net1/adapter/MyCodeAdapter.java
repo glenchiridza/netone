@@ -23,6 +23,8 @@ public class MyCodeAdapter extends RecyclerView.Adapter<MyCodeViewHolder> {
     public MyCodeAdapter(Context context, List<MyCodes> savedCodes) {
         this.context = context;
         this.savedCodes = savedCodes;
+
+
     }
 
     @NonNull

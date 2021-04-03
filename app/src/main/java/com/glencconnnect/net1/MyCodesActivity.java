@@ -1,7 +1,9 @@
 package com.glencconnnect.net1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,7 +27,6 @@ import java.util.List;
 public class MyCodesActivity extends AppCompatActivity {
 
     private static final String SHAREDCODE = "starred_dial_code";
-    private static final String SHAREDCODE2 = "starred_code";
     private Toolbar toolbar;
     public static final String PREF_KEY = "com.glencconnect.net1.preference";
     private SharedPreferences sharedPreferences;
@@ -50,13 +51,16 @@ public class MyCodesActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        savedCodes = new ArrayList<>();
-
+//        savedCodes = new ArrayList<>();
 
         //edit texts
         editCodeTitle = findViewById(R.id.edit_shortcode_title);
         editCode = findViewById(R.id.edit_short_code);
         btnSave = findViewById(R.id.btn_save);
+
+        //load shared pref
+        loadData();
+
 
         sharedPreferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -69,13 +73,39 @@ public class MyCodesActivity extends AppCompatActivity {
             saveData();
         });
 
+
+
         //setup recyclerview
         recyclerView = findViewById(R.id.dial_codes_recycler);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
         adapter = new MyCodeAdapter(this, savedCodes);
         recyclerView.setAdapter(adapter);
+
+        //itemswipe event
+        ItemTouchHelper touchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int pos = viewHolder.getAdapterPosition();
+                savedCodes.remove(pos);
+                editor.clear();
+                saveData();
+                adapter.notifyDataSetChanged();
+
+                recyclerView.scrollToPosition(0);
+
+            }
+        });
+
+//        invoke touch helper on recyclerview
+        touchHelper.attachToRecyclerView(recyclerView);
 
 
     }
@@ -125,16 +155,14 @@ public class MyCodesActivity extends AppCompatActivity {
 
 
         //save to shared prefs in the form of string.
-        editor.putString(SHAREDCODE, String.valueOf(savedCodes));
+        editor.putString(SHAREDCODE, json);
 
         //apply changes
         editor.apply();
 
         // after saving data we are displaying a toast message.
-        Toast.makeText(this, "Short code saved ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Short codes updated ", Toast.LENGTH_SHORT).show();
     }
-
-
 
 
 
@@ -150,12 +178,5 @@ public class MyCodesActivity extends AppCompatActivity {
         }
     }
 
-//    @Override
-//    protected void onStop() {
-//        for (int i =0;i<savedCodes.size();i++){
-//            editor.putString(SHAREDCODE+i,savedCodes.get(i));
-//        }
-//        editor.apply();
-//        super.onStop();
-//    }
+
 }

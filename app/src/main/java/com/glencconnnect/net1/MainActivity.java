@@ -75,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
 
+        //request phone permission on create
+        if(!permissionGranted())
+            requestPhonePermission();
+
     }
 
     //set Title for each fragment
@@ -203,7 +207,8 @@ public class MainActivity extends AppCompatActivity {
                     boolean phoneAccept = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                     boolean phone_read = grantResults[1] == PackageManager.PERMISSION_GRANTED;
                     if (phoneAccept && phone_read) {
-                        dialIntent();
+//                        dialIntent();
+                        //do nothing is permission is granted, jus allow user to make the calls
                     }
                 } else {
                     requestPhonePermission();
