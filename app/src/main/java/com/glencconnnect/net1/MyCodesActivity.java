@@ -78,8 +78,7 @@ public class MyCodesActivity extends AppCompatActivity {
         //setup recyclerview
         recyclerView = findViewById(R.id.dial_codes_recycler);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setReverseLayout(true);
-        linearLayoutManager.getStackFromEnd();
+        linearLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
         adapter = new MyCodeAdapter(this, savedCodes);
