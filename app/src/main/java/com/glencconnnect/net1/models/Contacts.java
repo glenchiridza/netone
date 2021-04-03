@@ -11,7 +11,6 @@ public class Contacts {
             "Head Office",
             "Beitbridge Shop",
             "Borrowdale Shop",
-            "Bulawayo Shop",
             "Bulawayo Airport",
             "Bulawayo Main Shop",
             "Chinhoyi Shop",
