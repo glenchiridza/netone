@@ -52,4 +52,5 @@
     <string name="short_code">Short Code</string>
     <string name="shortcode_title">ShortCode Title</string>
     <string name="starred">Starred</string>
+    <string name="codename">CodeName</string>
 </resources>

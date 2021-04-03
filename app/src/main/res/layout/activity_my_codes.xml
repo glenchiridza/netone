@@ -31,24 +31,26 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
+        app:hintTextColor="@color/teal_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <EditText
-            android:id="@+id/my_shortcode_title"
+            android:id="@+id/edit_shortcode_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/shortcode_title"
             android:ems="10"
+            android:hint="@string/shortcode_title"
             android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/shortcode_label"
         android:layout_width="0dp"
+        app:hintTextColor="@color/teal_200"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
@@ -58,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/short_title_label">
 
         <EditText
-            android:id="@+id/my_short_code"
+            android:id="@+id/edit_short_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/short_code"
@@ -73,13 +75,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/yellow_200"
+        android:backgroundTint="@color/teal_200"
         android:text="@string/save_code"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/shortcode_label"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/shortcode_label"
         app:layout_constraintTop_toBottomOf="@+id/shortcode_label" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dial_codes_recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_save"
+        app:layout_constraintStart_toStartOf="@+id/btn_save"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
